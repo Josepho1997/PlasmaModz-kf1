@@ -292,6 +292,7 @@ public class Bmod extends Activity {
 	                    		int duration = Toast.LENGTH_SHORT;
 	                    		Toast toast = Toast.makeText(context2, text, duration);
 	                    		toast.show();
+	                    		fileRealName = null;
 	                            
 	                            
 	                            
