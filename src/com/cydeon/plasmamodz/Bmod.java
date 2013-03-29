@@ -415,15 +415,20 @@ public class Bmod extends Activity {
 					fileRealName = "Stock softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
-			                Uri.parse("http://"));
+			                Uri.parse("https://dl.dropbox.com/s/s74kge4oohbbn7b/softkey_stock.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);
 			        enqueue = dm.enqueue(req);
 				}if (stockblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Stock Blue softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/ao5bsk2ypi9106j/softkey_stock_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (green != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
@@ -440,7 +445,7 @@ public class Bmod extends Activity {
 					fileRealName = "Pink softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
-			                Uri.parse("http://"));
+			                Uri.parse("https://dl.dropbox.com/s/lh314twk6yjr5yh/softkey_pink.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);
 			        enqueue = dm.enqueue(req);
@@ -450,7 +455,7 @@ public class Bmod extends Activity {
 					fileRealName = "Purple softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
-			                Uri.parse("http://"));
+			                Uri.parse("https://dl.dropbox.com/s/p9qkvggr0a6df51/softkey_purple.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);
 			        enqueue = dm.enqueue(req);
@@ -460,7 +465,7 @@ public class Bmod extends Activity {
 					fileRealName = "Yellow softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
-			                Uri.parse("http://"));
+			                Uri.parse("https://dl.dropbox.com/s/hj9is7ohuagbb42/softkey_yellow.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);
 			        enqueue = dm.enqueue(req);
@@ -470,7 +475,7 @@ public class Bmod extends Activity {
 					fileRealName = "Red softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
-			                Uri.parse("http://"));
+			                Uri.parse("https://dl.dropbox.com/s/qzd95tgnr63vvlp/softkey_red.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);
 			        enqueue = dm.enqueue(req);
@@ -497,32 +502,57 @@ public class Bmod extends Activity {
 				}if (reflect != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Reflect Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/ck429r6w7hwa70d/softkey_reflect.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (reflectblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Reflect Blue Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/mjinoz4curlz1rd/softkey_reflect_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (razor != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Razor Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/zkq1lr1cpvux02h/softkey_razor.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (razorblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Razor Blue Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/c1pnqgyq2fg4asi/softkey_razor_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (small != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Small Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/w8fnyvd9lkkuos2/softkey_small.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (smallblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					fileRealName = "Small Blue softkey Mod";
+					fileRealName = "Small Blue Softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/jcj2r6ifjaqo8rz/softkey_small_blue.zip"));
@@ -532,33 +562,63 @@ public class Bmod extends Activity {
 				}if (smallreflect != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Small Reflect Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/a5afxfv6mkvav8z/softkey_small_reflect.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (smallreflectblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Small Reflect Blue Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/iok8uktd2ckdg65/softkey_small_reflect_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (xperia != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Xperia Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/3sbkvirpcbksljg/softkey_xperia.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (xperiablue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Xperia Blue Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/3nvzbqlxelelk7g/softkey_xperia_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (zte != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "ZTE Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/1r8zl2zqjiykvov/softkey_zte.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (zteblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "ZTE Blue Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/hkiynqfsoupi5wl/softkey_zte_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);
+			        enqueue = dm.enqueue(req);
 				}if (college != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
@@ -603,7 +663,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileName = "softkey.zip";
-					fileRealName = "Droid softkey Mod";
+					fileRealName = "Droid Softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/nvs1yyl87m0mj67/softkey_droid.zip"));
@@ -613,7 +673,7 @@ public class Bmod extends Activity {
 				}if (droidblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					fileRealName = "Droid Blue softkey Mod";
+					fileRealName = "Droid Blue Softkey Mod";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/a7h5p0j9yvrd9qo/softkey_droid_blue.zip"));
@@ -623,13 +683,23 @@ public class Bmod extends Activity {
 				}if (pixel != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Pixel softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/u8mdhhrjfpr4oh4/softkey_pixel.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
 				}if (pixelblue != null){
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute();
+					fileRealName = "Pixel Blue softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/zgvzgw5u8elmeaz/softkey_pixel_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
 				}
 				
 				try {
