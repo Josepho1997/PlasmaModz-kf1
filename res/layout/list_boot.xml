@@ -3,24 +3,40 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:padding="5dp" >
+    
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp" >
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/logoP"
         android:layout_width="60px"
         android:layout_height="102.4px"
         android:layout_marginLeft="5px"
         android:layout_marginRight="20px"
-        android:layout_marginTop="5px" >
+        android:layout_marginTop="2px" >
     </ImageView>
+
+    <ImageView
+        android:id="@+id/logoL"
+        android:layout_width="102.4px"
+        android:layout_height="60px"
+        android:layout_marginLeft="5px"
+        android:layout_marginRight="20px"
+        android:layout_marginTop="21.2px" />
 
     <TextView
         android:id="@+id/label"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_marginLeft="160px"
+		android:layout_marginTop="11.85px"
         android:layout_weight="6.53"
         android:gravity="center"
-        android:layout_marginTop="5px"
         android:text="@+id/label"
         android:textSize="60px" />
+
+    </RelativeLayout>
 
 </LinearLayout>
