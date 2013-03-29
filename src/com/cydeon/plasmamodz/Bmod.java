@@ -52,95 +52,7 @@ public class Bmod extends Activity {
 	 private DownloadManager dm;
 	 ProgressDialog progressbar;
 	
-	private void copyFile(InputStream in, OutputStream out) throws IOException {
-		byte[] buffer = new byte[1024];
-		int read;
-		while((read = in.read(buffer)) != -1){
-			out.write(buffer, 0, read);
-		}
-	}
 	
-	private class DownloadFile extends AsyncTask<String, Integer, String>{
-		@Override
-		protected String doInBackground(String... sURL) {
-			try{
-				URL url = new URL(sURL[0]);
-				URLConnection connection = url.openConnection();
-				connection.connect();
-				//Shows 0-100% progress bar
-				int fileLength = connection.getContentLength();
-				
-				//Download the file
-				InputStream input = new BufferedInputStream(url.openStream());
-				OutputStream output = new FileOutputStream("/sdcard/plasma/downloads/" + fileName);
-				byte data[] = new byte[1024];
-				long total = 0;
-				int count;
-				while ((count = input.read(data)) != -1) {
-					total += count;
-					//Publish the Progress
-					publishProgress((int) (total * 100/fileLength));
-					output.write(data, 0, count);
-					}
-					
-				output.flush();
-				output.close();
-				input.close();
-				
-		} catch (Exception e) {
-			
-		}
-		return null;
-			}
-		
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			mProgressDialog.show();
-		}
-		
-		@Override
-		protected void onProgressUpdate(Integer... progress){
-			super.onProgressUpdate(progress);
-			mProgressDialog.setProgress(progress[0]);
-			
-			
-			
-		}
-
-		@Override
-		protected void onPostExecute(String result) {
-			// TODO Auto-generated method stub
-			super.onPostExecute(result);
-			mProgressDialog.dismiss();
-			Context context = getApplicationContext();
-			CharSequence text = "Download complete";
-			int duration = Toast.LENGTH_SHORT;
-				AssetManager assetManager = getAssets();
-				String[] files = null;
-				try{
-					files = assetManager.list("");
-					
-			} catch (IOException e) {
-				Log.e("tag", "Failed to get asset file list.", e);
-			}
-
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
-			try {
-				  Intent openNewIntent = new Intent(Bmod.this, Class.forName(className) );
-				  startActivity( openNewIntent );
-				} catch (ClassNotFoundException e) {
-				  e.printStackTrace(); 
-				}
-		}
-	}
-	
-	ProgressDialog mProgressDialog;
-	
-	
-	
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -300,11 +212,6 @@ public class Bmod extends Activity {
 	                DownloadManager.ACTION_DOWNLOAD_COMPLETE));
 
 		
-		mProgressDialog = new ProgressDialog(Bmod.this);
-		mProgressDialog.setIndeterminate(false);
-		mProgressDialog.setMax(100);
-		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-		mProgressDialog.setCancelable(false);
 		bInstallB.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
