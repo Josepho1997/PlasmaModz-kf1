@@ -20,22 +20,22 @@
 
     <ImageView
         android:id="@+id/logoL"
-        android:layout_width="102.4px"
-        android:layout_height="60px"
+        android:layout_width="128px"
+        android:layout_height="75px"
         android:layout_marginLeft="5px"
         android:layout_marginRight="20px"
-        android:layout_marginTop="21.2px" />
+        android:layout_marginTop="12.2px" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_marginLeft="160px"
+		android:layout_marginLeft="185px"
 		android:layout_marginTop="11.85px"
         android:layout_weight="6.53"
         android:gravity="center"
         android:text="@+id/label"
-        android:textSize="60px" />
+        android:textSize="50px" />
 
     </RelativeLayout>
 
