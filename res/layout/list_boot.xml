@@ -24,7 +24,7 @@
         android:layout_height="75px"
         android:layout_marginLeft="5px"
         android:layout_marginRight="20px"
-        android:layout_marginTop="12.2px" />
+        android:layout_marginTop="14.6px" />
 
     <TextView
         android:id="@+id/label"
