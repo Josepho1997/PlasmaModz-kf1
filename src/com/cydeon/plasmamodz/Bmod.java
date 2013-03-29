@@ -287,12 +287,6 @@ public class Bmod extends Activity {
 	                            String uriString = c
 	                                    .getString(c
 	                                            .getColumnIndex(DownloadManager.COLUMN_LOCAL_URI));
-	                    		Context context2 = getApplicationContext();
-	                    		CharSequence text = fileRealName + " downloaded";
-	                    		int duration = Toast.LENGTH_SHORT;
-	                    		Toast toast = Toast.makeText(context2, text, duration);
-	                    		toast.show();
-	                    		fileRealName = null;
 	                            
 	                            
 	                            
@@ -639,6 +633,11 @@ public class Bmod extends Activity {
 				}
 				
 				try {
+					Context context2 = getApplicationContext();
+            		CharSequence text = "Downloading " + fileRealName;
+            		int duration = Toast.LENGTH_SHORT;
+            		Toast toast = Toast.makeText(context2, text, duration);
+            		toast.show();
 					  Intent openNewIntent = new Intent(Bmod.this, Class.forName(className) );
 					  startActivity( openNewIntent );
 					} catch (ClassNotFoundException e) {
