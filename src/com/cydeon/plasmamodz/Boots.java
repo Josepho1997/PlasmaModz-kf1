@@ -1,6 +1,7 @@
 	package com.cydeon.plasmamodz;
 
-	import com.stericson.RootTools.*;
+	import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.stericson.RootTools.*;
 	import com.stericson.RootTools.exceptions.RootDeniedException;
 	import com.stericson.RootTools.execution.CommandCapture;
 
@@ -51,22 +52,30 @@ import android.widget.Toast;
 	 
 			View rowView = inflater.inflate(R.layout.list_boot, parent, false);
 			TextView textView = (TextView) rowView.findViewById(R.id.label);
-			ImageView imageView = (ImageView) rowView.findViewById(R.id.logo);
+			ImageView imageViewP = (ImageView) rowView.findViewById(R.id.logoP);
+			ImageView imageViewL = (ImageView) rowView.findViewById(R.id.logoL);
 			textView.setText(values[position]);
 	 
-			// Change icon based on name
 			String s = values[position];
 	 
 			System.out.println(s);
 	 
 			if (s.equals("Android")) {
-				imageView.setImageResource(R.drawable.android);
+				imageViewP.setImageResource(R.drawable.android);
 			} else if (s.equals("Dragon Ball")) {
-				imageView.setImageResource(R.drawable.dotted);
-			} else if (s.equals("JellyBean")) {
-				imageView.setImageResource(R.drawable.soft_galaxy);
-			} else {
-				imageView.setImageResource(R.drawable.default_img);
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/4p33hsydhkv4kgn/dragon_boot.png", R.drawable.default_img, 60000);	
+			} else if (s.equals("GameBoy")){
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/49ke2m2gyeggakk/gameboy_boot.png", R.drawable.default_img, 60000);	
+			} else if (s.equals("GameCube")){
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/5wavzwvjsatv5bh/gamecube_boot.png", R.drawable.default_img, 60000);	
+			} else if (s.equals("Nexus")){
+				
+			} else if (s.equals("The Nightmare Before Christmas")){
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/0qhgb8fnws9dsbp/nmbc_boot.png", R.drawable.default_img, 60000);	
+			} else if (s.equals("Xbox")){
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/6a1z0e9rz6iomii/xbox_boot_new.png", R.drawable.default_img, 60000);	
+			} else if (s.equals("Xbox 1")){
+				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/r8x47wc0mj7mhd8/boot_xbox_old.png", R.drawable.default_img, 60000);	
 			}
 	 
 			return rowView;
