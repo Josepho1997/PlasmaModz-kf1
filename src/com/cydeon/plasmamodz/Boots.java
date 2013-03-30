@@ -61,7 +61,7 @@ import android.widget.Toast;
 			System.out.println(s);
 	 
 			if (s.equals("Android")) {
-				imageViewP.setImageResource(R.drawable.android);
+				UrlImageViewHelper.setUrlDrawable(imageViewP, "https://dl.dropbox.com/s/rwcd8ma0oiecddq/0033.png", R.drawable.default_img, 60000);	
 			} else if (s.equals("Dragon Ball")) {
 				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/4p33hsydhkv4kgn/dragon_boot.png", R.drawable.default_img, 60000);	
 			} else if (s.equals("GameBoy")){
@@ -69,7 +69,7 @@ import android.widget.Toast;
 			} else if (s.equals("GameCube")){
 				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/5wavzwvjsatv5bh/gamecube_boot.png", R.drawable.default_img, 60000);	
 			} else if (s.equals("Nexus")){
-				
+				UrlImageViewHelper.setUrlDrawable(imageViewP, "https://dl.dropbox.com/s/0vg7pn3yz6ql2v7/nexus_boot.png", R.drawable.default_img, 60000);	
 			} else if (s.equals("The Nightmare Before Christmas")){
 				UrlImageViewHelper.setUrlDrawable(imageViewL, "https://dl.dropbox.com/s/0qhgb8fnws9dsbp/nmbc_boot.png", R.drawable.default_img, 60000);	
 			} else if (s.equals("Xbox")){
