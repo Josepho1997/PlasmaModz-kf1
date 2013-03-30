@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:text="Select" />
+        android:text="Browse" />
 
         <Button
         android:id="@+id/bRestore"
