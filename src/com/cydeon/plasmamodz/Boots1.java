@@ -5,12 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Boots1 extends ListActivity {
 	 
 		static final String[] Boot = 
-	               new String[] { "Android", "Dragon Ball", "JellyBean", "Nexus"};
+	               new String[] { "Android", "Dragon Ball", "GameBoy", "GameCube", "Nexus", "The Nightmare Before Christmas", "Xbox", "Xbox 1"};
 	 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
