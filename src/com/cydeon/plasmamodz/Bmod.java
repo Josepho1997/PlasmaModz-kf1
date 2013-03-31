@@ -101,6 +101,15 @@ public class Bmod extends Activity {
 		final String droidblue = battery.getString("DroidBlue");
 		final String pixel = battery.getString("Pixel");
 		final String pixelblue = battery.getString("PixelBlue");
+		final String bluedarkwifi = battery.getString("BlueDarkWifi");
+		final String bluewifi = battery.getString("BlueWifi");
+		final String goldwifi = battery.getString("GoldWifi");
+		final String greenwifi = battery.getString("GreenWifi");
+		final String orangewifi = battery.getString("OrangeWifi");
+		final String pinkwifi = battery.getString("PinkWifi");
+		final String redwifi = battery.getString("RedWifi");
+		final String whitewifi = battery.getString("WhiteWifi");
+		
 		if (andy != null){
 	        UrlImageViewHelper.setUrlDrawable(batteryView, "http://random.png", R.drawable.default_img, 60000);
 		}if (bluebox != null){
@@ -179,6 +188,22 @@ public class Bmod extends Activity {
 			UrlImageViewHelper.setUrlDrawable(batteryView, "http://dl.dropbox.com/u/1983605/Softkeys/Fonts/Pixel/example.png", R.drawable.default_img, 60000);
 		}if (pixelblue != null){
 			UrlImageViewHelper.setUrlDrawable(batteryView, "http://dl.dropbox.com/u/1983605/Softkeys/Fonts/Pixel/example.png", R.drawable.default_img, 60000);
+		}if (bluedarkwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (bluewifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (goldwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (greenwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (orangewifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (pinkwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (redwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (whitewifi != null){
+			batteryView.setImageResource(R.drawable.blank);
 		}
 		
 		 BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -604,6 +629,86 @@ public class Bmod extends Activity {
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/zgvzgw5u8elmeaz/softkey_pixel_blue.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (bluedarkwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Dark Blue Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/faar9qvd3br8e71/wifi_blue_dark.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (bluewifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Blue Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/f98v3323nzez91v/wifi_cyan.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (goldwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Gold Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/nx7j2ak6noi6v8v/wifi_gold.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (greenwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Green Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/dsupqkqtgtvunqg/wifi_green.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (orangewifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Orange Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/h71zqsxdlnr0p8l/wifi_orange.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (pinkwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Pink Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/yjdlbco6zkbdz46/wifi_pink.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (redwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Red Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/lk7v6umk2pk2bi3/wifi_red.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (whitewifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "White Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/zvp3pprwlh6h39z/wifi_white.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);	
 			        enqueue = dm.enqueue(req);
