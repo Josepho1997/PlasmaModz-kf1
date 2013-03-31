@@ -60,6 +60,14 @@ public class MainActivity extends Activity {
     scripts.mkdirs();
     }
     
+    File boot = new File(Environment.getExternalStorageDirectory() + "/plasma/boot");
+    if(boot.exists() && boot.isDirectory()){
+    //Do nothing. Directory is existent	
+    }else{
+    //Directory does not exist. Make directory (First time app users)
+    boot.mkdirs();
+    }
+    
     // setup action bar for tabs
     ActionBar actionBar = getActionBar();
     actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
