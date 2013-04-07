@@ -2,6 +2,8 @@ package com.cydeon.plasmamodz;
 
 import java.io.File;
 
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
@@ -23,7 +25,7 @@ public class Softkeys extends Activity implements OnClickListener{
 		    
 		    ActionBar actionBar = getActionBar();
 			actionBar.hide();
-			int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29};
+			int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29, R.id.b30};
 			for(int i = 0; i < viewIds.length; i++){
 				View v = findViewById(viewIds[i]);
 				if (v != null) {
@@ -32,6 +34,7 @@ public class Softkeys extends Activity implements OnClickListener{
 			}
 			Button stock = (Button) findViewById(R.id.b1);
 			stock.setBackgroundResource(R.drawable.soft_stock);
+			stock.loadUrlDrawable(stock, "http://clipartist.info/RSS/openclipart.org/2011/May/25-Wednesday/red_button-999px.png"));
 			Button stockBlue = (Button) findViewById(R.id.b2);
 			stockBlue.setBackgroundResource(R.drawable.soft_stock_blue);
 			Button green = (Button) findViewById(R.id.b3);
@@ -88,7 +91,9 @@ public class Softkeys extends Activity implements OnClickListener{
 			pixel.setBackgroundResource(R.drawable.soft_pixel);
 			Button pixelBlue = (Button) findViewById(R.id.b29);
 			pixelBlue.setBackgroundResource(R.drawable.soft_pixel_blue);
-			int [] viewIds2 = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29};
+			Button facebook = (Button) findViewById(R.id.b30);
+			facebook.setBackgroundResource(R.drawable.soft_facebook);
+			int [] viewIds2 = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29, R.id.b30};
 			for(int i = 0; i < viewIds2.length; i++){
 				View v = findViewById(viewIds2[i]);
 				if (v != null) {
@@ -187,6 +192,9 @@ public class Softkeys extends Activity implements OnClickListener{
 			startActivity(a);
 		} else if (arg0.getId() == R.id.b29) {
 			a.putExtra("PixelBlue", "pixelsblue");
+			startActivity(a);
+		} else if (arg0.getId() == R.id.b30){
+			a.putExtra("Facebook", "facebook");
 			startActivity(a);
 		}
 
