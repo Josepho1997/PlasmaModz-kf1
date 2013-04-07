@@ -101,6 +101,7 @@ public class Bmod extends Activity {
 		final String droidblue = battery.getString("DroidBlue");
 		final String pixel = battery.getString("Pixel");
 		final String pixelblue = battery.getString("PixelBlue");
+		final String facebook = battery.getString("Facebook");
 		final String bluedarkwifi = battery.getString("BlueDarkWifi");
 		final String bluewifi = battery.getString("BlueWifi");
 		final String goldwifi = battery.getString("GoldWifi");
@@ -109,6 +110,8 @@ public class Bmod extends Activity {
 		final String pinkwifi = battery.getString("PinkWifi");
 		final String redwifi = battery.getString("RedWifi");
 		final String whitewifi = battery.getString("WhiteWifi");
+		final String honeycombwifi = battery.getString("HoneycombWifi");
+		final String lightredwifi = battery.getString("LightRedWifi");
 		
 		if (andy != null){
 	        UrlImageViewHelper.setUrlDrawable(batteryView, "http://random.png", R.drawable.default_img, 60000);
@@ -188,6 +191,8 @@ public class Bmod extends Activity {
 			UrlImageViewHelper.setUrlDrawable(batteryView, "http://dl.dropbox.com/u/1983605/Softkeys/Fonts/Pixel/example.png", R.drawable.default_img, 60000);
 		}if (pixelblue != null){
 			UrlImageViewHelper.setUrlDrawable(batteryView, "http://dl.dropbox.com/u/1983605/Softkeys/Fonts/Pixel/example.png", R.drawable.default_img, 60000);
+		}if (facebook != null){
+			UrlImageViewHelper.setUrlDrawable(batteryView, "http://dl.dropbox.com/u/1983605/Softkeys/Facebook/example.png", R.drawable.default_img, 60000);
 		}if (bluedarkwifi != null){
 			batteryView.setImageResource(R.drawable.blank);
 		}if (bluewifi != null){
@@ -203,6 +208,10 @@ public class Bmod extends Activity {
 		}if (redwifi != null){
 			batteryView.setImageResource(R.drawable.blank);
 		}if (whitewifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (honeycombwifi != null){
+			batteryView.setImageResource(R.drawable.blank);
+		}if (lightredwifi != null){
 			batteryView.setImageResource(R.drawable.blank);
 		}
 		
@@ -632,6 +641,16 @@ public class Bmod extends Activity {
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);	
 			        enqueue = dm.enqueue(req);
+				}if (facebook != null){
+					className = "com.cydeon.plasmamodz.Wifi";
+					fileName = "softkey.zip";
+					fileRealName = "Facebook Softkey Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/tqu9s1hajolybcm/softkey_facebook.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
 				}if (bluedarkwifi != null){
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
@@ -709,6 +728,26 @@ public class Bmod extends Activity {
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/zvp3pprwlh6h39z/wifi_white.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (honeycombwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Honeycomb Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/d2ebcxyvnsabcmg/wifi_honeycomb.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (lightredwifi != null){
+					className = "com.cydeon.plasmamodz.StatusBar";
+					fileName = "wifi.zip";
+					fileRealName = "Light Red Wifi Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/79jvb8qjx7shwr0/wifi_lightred.zip"));
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);	
 			        enqueue = dm.enqueue(req);
