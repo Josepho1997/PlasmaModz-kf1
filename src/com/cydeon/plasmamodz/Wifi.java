@@ -17,7 +17,7 @@ public class Wifi extends Activity implements OnClickListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.themes);
 		
-		 int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8};
+		 int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10};
 			for(int i = 0; i < viewIds.length; i++){
 				View v = findViewById(viewIds[i]);
 				if (v != null) {
@@ -41,6 +41,10 @@ public class Wifi extends Activity implements OnClickListener {
 	red.setBackgroundResource(R.drawable.wifi_red);
 	Button white = (Button) findViewById(R.id.b8);
 	white.setBackgroundResource(R.drawable.wifi_white);
+	Button honeycomb = (Button) findViewById(R.id.b9);
+	honeycomb.setBackgroundResource(R.drawable.wifi_honeycomb);
+	Button lightred = (Button) findViewById(R.id.b10);
+	lightred.setBackgroundResource(R.drawable.wifi_lightred);
 
 	int [] viewIds2 = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8};
 		for(int i = 0; i < viewIds2.length; i++){
@@ -78,6 +82,12 @@ public class Wifi extends Activity implements OnClickListener {
 			startActivity(a);
 		} else if (arg0.getId() == R.id.b8) {
 			a.putExtra("WhiteWifi", "whitewifi");
+			startActivity(a);
+		} else if (arg0.getId() == R.id.b9){
+			a.putExtra("HoneycombWifi", "honeycombwifi");
+			startActivity(a);
+		} else if (arg0.getId() == R.id.b10){
+			a.putExtra("LightRedWifi", "lightredwifi");
 			startActivity(a);
 		}
 		
