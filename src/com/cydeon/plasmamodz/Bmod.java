@@ -48,6 +48,7 @@ public class Bmod extends Activity {
 	String fileName;
 	String className;
 	String fileRealName;
+	String dp;
 	 private long enqueue;
 	 private DownloadManager dm;
 	 ProgressDialog progressbar;
@@ -785,6 +786,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Stock Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/vxwpqcvgzu4up8c/sb_black.zip"));
@@ -795,6 +797,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Green Hex Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/behyvfd276t47vq/sb_green_hex.zip"));
@@ -805,6 +808,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Purple Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/6kvs2wkoocap4c3/sb_ld_p_overlay.zip"));
@@ -815,6 +819,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Night Sky Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/td35ra8lfpe1pd5/sb_nightsky.zip"));
@@ -825,6 +830,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Purple Blue Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/1r2j3xb69y2vrwl/sb_pb_overlay.zip"));
@@ -835,6 +841,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Rainbow Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/be72s3o7g2lx1np/sb_rainbow.zip"));
@@ -845,6 +852,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Red Blue Orange Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/jikz1ipb5nmfts6/sb_rblueo_overlay.zip"));
@@ -855,6 +863,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "White Black Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/xa826nspk473t17/sb_wb_overlay.zip"));
@@ -865,6 +874,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Wood Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/4ytroewpb4z9vel/sb_wood.zip"));
@@ -875,6 +885,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "White Blue Status Bar Mod";
+					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 			        Request req = new Request(
 			                Uri.parse("https://dl.dropbox.com/s/i6uc2ytldo9w4vv/sb_wblue_overlay.zip"));
@@ -883,6 +894,14 @@ public class Bmod extends Activity {
 			        enqueue = dm.enqueue(req);
 				}
 				
+				if(dp != null){
+				dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+		        Request req = new Request(
+		                Uri.parse("https://dl.dropbox.com/s/lw6b8mftp6pohtd/dp.zip"));
+		        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+	                    fileName);	
+		        enqueue = dm.enqueue(req);
+				}
 				
 				try {
 					Context context2 = getApplicationContext();
