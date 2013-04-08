@@ -63,6 +63,10 @@
             android:name=".BootAnimation"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".StatusBar"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
