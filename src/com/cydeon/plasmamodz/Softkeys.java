@@ -34,7 +34,6 @@ public class Softkeys extends Activity implements OnClickListener{
 			}
 			Button stock = (Button) findViewById(R.id.b1);
 			stock.setBackgroundResource(R.drawable.soft_stock);
-			stock.loadUrlDrawable(stock, "http://clipartist.info/RSS/openclipart.org/2011/May/25-Wednesday/red_button-999px.png"));
 			Button stockBlue = (Button) findViewById(R.id.b2);
 			stockBlue.setBackgroundResource(R.drawable.soft_stock_blue);
 			Button green = (Button) findViewById(R.id.b3);
