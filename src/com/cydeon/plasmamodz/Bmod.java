@@ -112,6 +112,16 @@ public class Bmod extends Activity {
 		final String whitewifi = battery.getString("WhiteWifi");
 		final String honeycombwifi = battery.getString("HoneycombWifi");
 		final String lightredwifi = battery.getString("LightRedWifi");
+		final String statstock = battery.getString("StatStock");
+		final String statgreenhex = battery.getString("StatGreenHex");
+		final String statlightdarkpurple = battery.getString("StatLightDarkPurple");
+		final String statnightsky = battery.getString("StatNightSky");
+		final String statpurpleblue = battery.getString("StatPurpleBlue");
+		final String statrainbow = battery.getString("StatRainbow");
+		final String statredblueorange = battery.getString("StatRedBlueOrange");
+		final String statwhiteblack = battery.getString("StatWhiteBlack");
+		final String statwood = battery.getString("StatWood");
+		final String statwhiteblue = battery.getString("StatWhiteBlue");
 		
 		if (andy != null){
 	        UrlImageViewHelper.setUrlDrawable(batteryView, "http://random.png", R.drawable.default_img, 60000);
@@ -213,6 +223,26 @@ public class Bmod extends Activity {
 			batteryView.setImageResource(R.drawable.blank);
 		}if (lightredwifi != null){
 			batteryView.setImageResource(R.drawable.blank);
+		}if (statstock != null){
+			
+		}if (statgreenhex != null){
+			
+		}if (statlightdarkpurple != null){
+			
+		}if (statnightsky != null){
+			
+		}if (statpurpleblue != null){
+			
+		}if (statrainbow != null){
+			
+		}if (statredblueorange != null){
+			
+		}if (statwhiteblack != null){
+			
+		}if (statwood != null){
+			
+		}if (statwhiteblue != null){
+			
 		}
 		
 		 BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -751,7 +781,108 @@ public class Bmod extends Activity {
 			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
 		                    fileName);	
 			        enqueue = dm.enqueue(req);
+				}if (statstock != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Stock Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/vxwpqcvgzu4up8c/sb_black.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statgreenhex != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Green Hex Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/behyvfd276t47vq/sb_green_hex.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statlightdarkpurple != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Purple Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/6kvs2wkoocap4c3/sb_ld_p_overlay.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statnightsky != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Night Sky Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/td35ra8lfpe1pd5/sb_nightsky.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statpurpleblue != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Purple Blue Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/1r2j3xb69y2vrwl/sb_pb_overlay.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statrainbow != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Rainbow Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/be72s3o7g2lx1np/sb_rainbow.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statredblueorange != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Red Blue Orange Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/jikz1ipb5nmfts6/sb_rblueo_overlay.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statwhiteblack != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "White Black Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/xa826nspk473t17/sb_wb_overlay.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statwood != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "Wood Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/4ytroewpb4z9vel/sb_wood.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
+				}if (statwhiteblue != null){
+					className = "com.cydeon.plasmamodz.Lock";
+					fileName = "stat.zip";
+					fileRealName = "White Blue Status Bar Mod";
+					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+			        Request req = new Request(
+			                Uri.parse("https://dl.dropbox.com/s/i6uc2ytldo9w4vv/sb_wblue_overlay.zip"));
+			        req.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS,
+		                    fileName);	
+			        enqueue = dm.enqueue(req);
 				}
+				
 				
 				try {
 					Context context2 = getApplicationContext();
@@ -778,10 +909,8 @@ public class Bmod extends Activity {
 				
 			}
 		});
-	
 		
-		
-	}
+		}
 
 	public void showDownload(View view) {
 		Context context = getApplicationContext();
