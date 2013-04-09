@@ -21,6 +21,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -122,6 +123,12 @@ public class MainActivity extends Activity {
         .setTabListener(new MyTabListener<BootFragment>(this, "album",
                BootFragment.class));
     actionBar.addTab(tab2);
+    
+    Tab tab3 = actionBar
+    		.newTab()
+    		.setText("Shortcuts")
+    		.setTabListener(new MyTabListener<ListFragment>(this, "song", ListFragment.class));
+    actionBar.addTab(tab3);
 
   }
 
@@ -197,7 +204,9 @@ public class MainActivity extends Activity {
       case R.id.menu_About:
           // Single menu item is selected do something
           // Ex: launching new activity/screen or show alert message
-          Toast.makeText(MainActivity.this, "About is Selected", Toast.LENGTH_SHORT).show();
+          Toast.makeText(MainActivity.this, "About", Toast.LENGTH_SHORT).show();
+          Intent about = new Intent(MainActivity.this, About1.class);
+          startActivity(about);
           return true;
 
       case R.id.menu_Credits:
