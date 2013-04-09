@@ -13,11 +13,21 @@
         android:text="Browse" />
 
         <Button
-        android:id="@+id/bRestore"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:text="Restore" />
+            android:id="@+id/bRestore"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="1dp"
+            android:text="Restore" />
+
+        <Button
+            android:id="@+id/bListS"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Shortcuts"
+            android:visibility="invisible" />
     
 </RelativeLayout>
