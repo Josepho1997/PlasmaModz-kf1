@@ -67,6 +67,22 @@
             android:name=".StatusBar"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".ListShort"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ListShort1"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name=".About"
+            android:label="@string/app_name" >
+        </activity>
+                <activity
+            android:name=".About1"
+            android:label="@string/app_name" >
+        </activity>
     </application>
 
 </manifest>
