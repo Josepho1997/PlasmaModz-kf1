@@ -4,6 +4,7 @@
     <string name="app_name">Plasma Modz</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="etCommand">Enter Beta Code</string>
+    <string name="aboutApp">So this is my app. I will add more detail about its origin later</string>
+    <string name="aboutAppButton">Cool Story</string>
 
 </resources>
