@@ -215,6 +215,8 @@ public class MainActivity extends Activity {
 
       case R.id.menu_Donate:
           Toast.makeText(MainActivity.this, "Donate is Selected", Toast.LENGTH_SHORT).show();
+          Intent donate = new Intent(MainActivity.this, Donate.class);
+          startActivity(donate);
           return true;
           
       default:
