@@ -416,33 +416,83 @@ public class Bmod extends Activity {
 			batteryView.setImageResource(R.drawable.blank);
 		}
 		if (statstock != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/z1ablv2keh8h0wh/Screenshot_2013-04-09-02-16-18.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statgreenhex != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/jhckcl02n5bk65x/Screenshot_2013-04-09-02-00-23.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statlightdarkpurple != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/il2r2fa715dugiw/Screenshot_2013-04-09-00-29-12.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statnightsky != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/5nhm79boda256kg/Screenshot_2013-04-09-02-01-12.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statpurpleblue != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/1itb7i88iufxsn9/Screenshot_2013-04-09-02-14-19.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statrainbow != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/rc6kb497vr5o8vz/Screenshot_2013-04-08-17-16-16.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statredblueorange != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/n1avmwfurat4hfv/Screenshot_2013-04-08-23-47-17.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statwhiteblack != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/1ia08rgclczl7fg/Screenshot_2013-04-09-02-11-05.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statwood != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/gs098cp9mhhnqrv/Screenshot_2013-04-08-16-28-44.png",
+							R.drawable.default_img, 60000);
 
 		}
 		if (statwhiteblue != null) {
+			UrlImageViewHelper
+					.setUrlDrawable(
+							batteryView,
+							"https://dl.dropbox.com/s/ez7mmcyto8etk1j/Screenshot_2013-04-08-16-30-11.png",
+							R.drawable.default_img, 60000);
 
 		}
 
