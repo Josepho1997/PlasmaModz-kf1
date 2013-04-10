@@ -14,81 +14,80 @@
             android:id="@+id/bStock"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:text="Stock" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/stocksb" />
 
         <Button
             android:id="@+id/bGreenHex"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bStock"
-            android:layout_marginTop="30dp"
-            android:text="GreenHex" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/greenhex" />
 
         <Button
             android:id="@+id/bLDPurple"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bGreenHex"
-            android:layout_marginTop="30dp"
-            android:text="Light Dark Purple" />
+            android:layout_marginTop="50dp"
+           android:background="@drawable/lightdarkpurple" />
 
         <Button
             android:id="@+id/bNightSky"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bLDPurple"
-            android:layout_marginTop="30dp"
-            android:text="Night Sky" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/starrynight" />
 
         <Button
             android:id="@+id/bPBLue"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bNightSky"
-            android:layout_marginTop="30dp"
-            android:text="Purple Blue" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bluepurple" />
 
         <Button
             android:id="@+id/bRainbow"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bPBLue"
-            android:layout_marginTop="30dp"
-            android:text="Rainbow" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/rainbow" />
 
         <Button
             android:id="@+id/bRBlueO"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bRainbow"
-            android:layout_marginTop="30dp"
-            android:text="Red Blue Orange" />
+            android:layout_marginTop="50dp"
+            android:background="@drawable/redblueorange" />
 
         <Button
             android:id="@+id/bWBlack"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bRBlueO"
-            android:layout_marginTop="30dp"
-            android:text="White Black" />
-        
-         <Button
+            android:layout_marginTop="50dp"
+            android:background="@drawable/blackwhite" />
+
+        <Button
             android:id="@+id/bWood"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bWBlack"
-            android:layout_marginTop="30dp"
-            android:text="Wood" />
-         
-         <Button
+            android:layout_marginTop="50dp"
+           android:background="@drawable/wood" />
+
+        <Button
             android:id="@+id/bWBlue"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bWood"
-            android:layout_marginTop="30dp"
-            android:text="White Blue" />
-         
+            android:layout_marginTop="50dp"
+            android:background="@drawable/blue_white" />
     </RelativeLayout>
 
 </ScrollView>
