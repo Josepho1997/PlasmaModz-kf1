@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class ListShort1 extends ListActivity {
 	 
 		static final String[] Activity = 
-	               new String[] { "Battery Mods", "Softkey Mods", "Status Bar Mods", "Wifi Mods", "Installer"};
+	               new String[] { "Battery Mods", "Lockscreen Mods", "Softkey Mods", "Status Bar Mods", "Wifi Mods", "Installer"};
 	 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {
@@ -29,15 +29,18 @@ public class ListShort1 extends ListActivity {
 				 Intent Bmods = new Intent(ListShort1.this, Themes.class);
 				 startActivity(Bmods);
 			 }else if (position == 1){
+				 Intent Lmods = new Intent(ListShort1.this, Lock.class);
+				 startActivity(Lmods);
+			 }else if (position == 2){
 				 Intent Smods = new Intent(ListShort1.this, Softkeys.class);
 				 startActivity(Smods);
-			 }else if (position == 2){
+			 }else if (position == 3){
 				 Intent Wmods = new Intent(ListShort1.this, StatusBar.class);
 				 startActivity(Wmods);
-			 }else if (position == 3){
+			 }else if (position == 4){
 				 Intent SBmods = new Intent(ListShort1.this, Wifi.class);
 				 startActivity(SBmods);
-			 }else if (position == 4){
+			 }else if (position == 5){
 				 Intent Installer = new Intent(ListShort1.this, Install.class);
 				 startActivity(Installer);
 			 }
