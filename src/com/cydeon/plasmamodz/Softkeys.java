@@ -9,12 +9,26 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.GestureDetector;
+import android.os.*;
 
-public class Softkeys extends Activity implements OnClickListener{
 
+public class Softkeys extends Activity implements OnClickListener, OnGestureListener{
+
+	 private GestureDetector gestureDetector;
+	 private static final int SWIPE_MIN_DISTANCE = 150;
+	    private static final int SWIPE_THRESHOLD_VELOCITY = 100;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -22,9 +36,18 @@ public class Softkeys extends Activity implements OnClickListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.themes);
-		    
 		    ActionBar actionBar = getActionBar();
 			actionBar.hide();
+			RelativeLayout ll = (RelativeLayout) findViewById(R.id.myLayout);
+		    gestureDetector = new GestureDetector(this, this);
+		    OnTouchListener gestureListener = new View.OnTouchListener() {
+		        public boolean onTouch(View v, MotionEvent event) {
+		            return gestureDetector.onTouchEvent(event);
+		        }
+		    };
+
+		    ll.setOnTouchListener(gestureListener);
+
 			int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29, R.id.b30};
 			for(int i = 0; i < viewIds.length; i++){
 				View v = findViewById(viewIds[i]);
@@ -198,5 +221,64 @@ public class Softkeys extends Activity implements OnClickListener{
 		}
 
 	
+	}
+
+	@Override
+	public boolean onDown(MotionEvent arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+            float velocityY) {
+        if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE
+                && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+
+            Toast.makeText(Softkeys.this, "Right to left",
+                    Toast.LENGTH_LONG).show();
+            Log.i("tag", "Right to left");
+            return true; // Right to left
+
+        } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
+                && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+
+            Toast.makeText(Softkeys.this, "Left to right",
+                    Toast.LENGTH_LONG).show();
+            Log.i("tag", "Left to right");
+            return true; // Left to right
+        }
+        return false;
+	}
+
+	@Override
+	public void onLongPress(MotionEvent arg0) {
+		Intent in = new Intent(Softkeys.this, MainActivity.class);
+		startActivity(in);
+	}
+
+	
+	@Override
+	public boolean onScroll(MotionEvent arg0, MotionEvent arg1, float arg2,
+			float arg3) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent me) {
+	return gestureDetector.onTouchEvent(me);
 	}
 }
