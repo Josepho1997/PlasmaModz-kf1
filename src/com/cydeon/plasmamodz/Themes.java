@@ -7,16 +7,39 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
+import android.view.GestureDetector.OnGestureListener;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.View.OnTouchListener;
 import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
 
-public class Themes extends Activity implements OnClickListener {
+public class Themes extends Activity implements OnClickListener, OnGestureListener {
+	
+	private GestureDetector gestureDetector;
+	private static final int SWIPE_MIN_DISTANCE = 150;
+	private static final int SWIPE_THRESHOLD_VELOCITY = 100;
+
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.themes);
+		
+		RelativeLayout r1 = (RelativeLayout) findViewById(R.id.myLayout);
+		gestureDetector = new GestureDetector(this, this);
+		OnTouchListener gestureListener = new View.OnTouchListener() {
+			public boolean onTouch(View v, MotionEvent event) {
+				return gestureDetector.onTouchEvent(event);
+			}
+		};
+
+		r1.setOnTouchListener(gestureListener);
 		
 		 File directory = new File(Environment.getExternalStorageDirectory() + "/plasma/downloads");
 		    if(directory.exists() && directory.isDirectory()){
@@ -109,6 +132,57 @@ public class Themes extends Activity implements OnClickListener {
 			startActivity(j);
 		}
 		
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+            float velocityY) {
+        if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE
+                && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+        	
+        	Intent next = new Intent(Themes.this, Softkeys.class);
+        	startActivity(next);
+            Log.i("tag", "Right to left");
+            return true; // Right to left
+
+        } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
+                && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
+
+            Toast.makeText(this, "You can't do that!", Toast.LENGTH_SHORT).show();
+            Log.i("tag", "Left to right");
+            return true; // Left to right
+        }
+        return false;
+	}
+	@Override
+	public void onLongPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX,
+			float distanceY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public void onShowPress(MotionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean onSingleTapUp(MotionEvent e) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 }

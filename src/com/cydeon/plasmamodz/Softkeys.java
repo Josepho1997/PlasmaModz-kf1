@@ -234,17 +234,18 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
             float velocityY) {
         if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
-
-            Toast.makeText(Softkeys.this, "Right to left",
-                    Toast.LENGTH_LONG).show();
+        	
+           Intent next = new Intent(Softkeys.this, Wifi.class);
+          
+           startActivity(next);
             Log.i("tag", "Right to left");
             return true; // Right to left
 
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
-            Toast.makeText(Softkeys.this, "Left to right",
-                    Toast.LENGTH_LONG).show();
+        	Intent previous = new Intent(Softkeys.this, Themes.class);
+            startActivity(previous);
             Log.i("tag", "Left to right");
             return true; // Left to right
         }
