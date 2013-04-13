@@ -4,6 +4,7 @@ import java.io.File;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -147,8 +148,11 @@ public class Themes extends Activity implements OnClickListener, OnGestureListen
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
         	
         	Intent next = new Intent(Themes.this, Softkeys.class);
-        	startActivity(next);
+        	Bundle bndlanimation =
+        	       	   ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.leftr,R.anim.rightl).toBundle();
+        	           startActivity(next, bndlanimation);
             Log.i("tag", "Right to left");
+            finish();
             return true; // Right to left
 
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE

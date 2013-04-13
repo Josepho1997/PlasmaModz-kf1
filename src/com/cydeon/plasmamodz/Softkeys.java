@@ -6,6 +6,7 @@ import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -236,17 +237,20 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
         	
            Intent next = new Intent(Softkeys.this, Wifi.class);
-          
-           startActivity(next);
-            Log.i("tag", "Right to left");
+           Bundle bndlanimation =
+       	   ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.leftr,R.anim.rightl).toBundle();
+           startActivity(next, bndlanimation);
+           finish();
             return true; // Right to left
 
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
         	Intent previous = new Intent(Softkeys.this, Themes.class);
-            startActivity(previous);
-            Log.i("tag", "Left to right");
+        	 Bundle bndlanimation =
+        				ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.back,R.anim.backfinish).toBundle();
+        	           startActivity(previous, bndlanimation);
+        	           finish();
             return true; // Left to right
         }
         return false;

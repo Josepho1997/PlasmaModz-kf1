@@ -2,6 +2,7 @@ package com.cydeon.plasmamodz;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -109,7 +110,10 @@ public class Lock extends Activity implements OnClickListener, OnGestureListener
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
         	Intent previous = new Intent(Lock.this, StatusBar.class);
-            startActivity(previous);
+        	 Bundle bndlanimation =
+     				ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.back,R.anim.backfinish).toBundle();
+     	           startActivity(previous, bndlanimation);
+     	           finish();
             Log.i("tag", "Left to right");
             return true; // Left to right
         }

@@ -127,8 +127,14 @@ public class MainActivity extends Activity {
     Tab tab3 = actionBar
     		.newTab()
     		.setText("Shortcuts")
-    		.setTabListener(new MyTabListener<ListFragment>(this, "song", ListFragment.class));
+    		.setTabListener(new MyTabListener<ListFrag>(this, "song", ListFrag.class));
     actionBar.addTab(tab3);
+    
+    Tab tab4 = actionBar
+    		.newTab()
+    		.setText("Extras")
+    		.setTabListener(new MyTabListener<ListExtras>(this, "bit", ListExtras.class));
+    actionBar.addTab(tab4);
 
   }
 

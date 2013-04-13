@@ -9,7 +9,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-public class ListFragment extends Fragment implements OnClickListener{
+public class ListFrag extends Fragment implements OnClickListener{
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

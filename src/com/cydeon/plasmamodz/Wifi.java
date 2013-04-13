@@ -2,6 +2,7 @@ package com.cydeon.plasmamodz;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -129,15 +130,21 @@ public class Wifi extends Activity implements OnClickListener,
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
         	
         	Intent next = new Intent(Wifi.this, StatusBar.class);
-        	startActivity(next);
+        	Bundle bndlanimation =
+        	       	   ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.leftr,R.anim.rightl).toBundle();
+        	           startActivity(next, bndlanimation);
             Log.i("tag", "Right to left");
+            finish();
             return true; // Right to left
 
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
         	Intent previous = new Intent(Wifi.this, Softkeys.class);
-            startActivity(previous);
+        	 Bundle bndlanimation =
+     				ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.back,R.anim.backfinish).toBundle();
+     	           startActivity(previous, bndlanimation);
+     	          finish();
             Log.i("tag", "Left to right");
             return true; // Left to right
         }

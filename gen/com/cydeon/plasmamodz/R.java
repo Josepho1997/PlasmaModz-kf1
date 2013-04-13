@@ -8,7 +8,20 @@
 package com.cydeon.plasmamodz;
 
 public final class R {
+    public static final class anim {
+        public static final int back=0x7f040000;
+        public static final int backfinish=0x7f040001;
+        public static final int leftr=0x7f040002;
+        public static final int rightl=0x7f040003;
+    }
+    public static final class array {
+        public static final int list=0x7f070000;
+    }
     public static final class attr {
+    }
+    public static final class color {
+        public static final int blue=0x7f050000;
+        public static final int green=0x7f050001;
     }
     public static final class drawable {
         public static final int android=0x7f020000;
@@ -82,90 +95,93 @@ public final class R {
         public static final int wood=0x7f020044;
     }
     public static final class id {
-        public static final int b1=0x7f070021;
-        public static final int b10=0x7f070022;
-        public static final int b11=0x7f07002b;
-        public static final int b12=0x7f07002a;
-        public static final int b13=0x7f070029;
-        public static final int b14=0x7f070028;
-        public static final int b15=0x7f070027;
-        public static final int b16=0x7f070030;
-        public static final int b17=0x7f07002f;
-        public static final int b18=0x7f07002e;
-        public static final int b19=0x7f07002d;
-        public static final int b2=0x7f070020;
-        public static final int b20=0x7f07002c;
-        public static final int b21=0x7f070035;
-        public static final int b22=0x7f070034;
-        public static final int b23=0x7f070033;
-        public static final int b24=0x7f070032;
-        public static final int b25=0x7f070031;
-        public static final int b26=0x7f07003a;
-        public static final int b27=0x7f070039;
-        public static final int b28=0x7f070038;
-        public static final int b29=0x7f070037;
-        public static final int b3=0x7f07001f;
-        public static final int b30=0x7f070036;
-        public static final int b4=0x7f07001e;
-        public static final int b5=0x7f07001d;
-        public static final int b6=0x7f070026;
-        public static final int b7=0x7f070025;
-        public static final int b8=0x7f070024;
-        public static final int b9=0x7f070023;
-        public static final int bGreenHex=0x7f070012;
-        public static final int bInstallBattery=0x7f070000;
-        public static final int bInstallTheme=0x7f070007;
-        public static final int bLDPurple=0x7f070013;
-        public static final int bListS=0x7f070005;
-        public static final int bNightSky=0x7f070014;
-        public static final int bPBLue=0x7f070015;
-        public static final int bRBlueO=0x7f070017;
-        public static final int bRainbow=0x7f070016;
-        public static final int bRestore=0x7f070004;
-        public static final int bReturnBattery=0x7f070001;
-        public static final int bSelect=0x7f070003;
-        public static final int bStock=0x7f070011;
-        public static final int bWBlack=0x7f070018;
-        public static final int bWBlue=0x7f07001a;
-        public static final int bWood=0x7f070019;
-        public static final int button1=0x7f07001b;
-        public static final int ivBattery=0x7f070002;
-        public static final int label=0x7f07000b;
-        public static final int logoL=0x7f07000a;
-        public static final int logoP=0x7f070009;
-        public static final int menu_About=0x7f07000e;
-        public static final int menu_Credits=0x7f07000c;
-        public static final int menu_Donate=0x7f07000d;
-        public static final int menu_settings=0x7f07003b;
-        public static final int myLayout=0x7f07001c;
-        public static final int sBar=0x7f070010;
-        public static final int svSB=0x7f07000f;
-        public static final int tvInstallTheme=0x7f070008;
-        public static final int wvDonate=0x7f070006;
+        public static final int b1=0x7f0a0022;
+        public static final int b10=0x7f0a0023;
+        public static final int b11=0x7f0a002c;
+        public static final int b12=0x7f0a002b;
+        public static final int b13=0x7f0a002a;
+        public static final int b14=0x7f0a0029;
+        public static final int b15=0x7f0a0028;
+        public static final int b16=0x7f0a0031;
+        public static final int b17=0x7f0a0030;
+        public static final int b18=0x7f0a002f;
+        public static final int b19=0x7f0a002e;
+        public static final int b2=0x7f0a0021;
+        public static final int b20=0x7f0a002d;
+        public static final int b21=0x7f0a0036;
+        public static final int b22=0x7f0a0035;
+        public static final int b23=0x7f0a0034;
+        public static final int b24=0x7f0a0033;
+        public static final int b25=0x7f0a0032;
+        public static final int b26=0x7f0a003b;
+        public static final int b27=0x7f0a003a;
+        public static final int b28=0x7f0a0039;
+        public static final int b29=0x7f0a0038;
+        public static final int b3=0x7f0a0020;
+        public static final int b30=0x7f0a0037;
+        public static final int b4=0x7f0a001f;
+        public static final int b5=0x7f0a001e;
+        public static final int b6=0x7f0a0027;
+        public static final int b7=0x7f0a0026;
+        public static final int b8=0x7f0a0025;
+        public static final int b9=0x7f0a0024;
+        public static final int bGreenHex=0x7f0a0013;
+        public static final int bInstallBattery=0x7f0a0000;
+        public static final int bInstallTheme=0x7f0a0007;
+        public static final int bLDPurple=0x7f0a0014;
+        public static final int bListS=0x7f0a0005;
+        public static final int bNightSky=0x7f0a0015;
+        public static final int bPBLue=0x7f0a0016;
+        public static final int bRBlueO=0x7f0a0018;
+        public static final int bRainbow=0x7f0a0017;
+        public static final int bRestore=0x7f0a0004;
+        public static final int bReturnBattery=0x7f0a0001;
+        public static final int bSelect=0x7f0a0003;
+        public static final int bStock=0x7f0a0012;
+        public static final int bWBlack=0x7f0a0019;
+        public static final int bWBlue=0x7f0a001b;
+        public static final int bWood=0x7f0a001a;
+        public static final int button1=0x7f0a001c;
+        public static final int ivBattery=0x7f0a0002;
+        public static final int label=0x7f0a000b;
+        public static final int logoL=0x7f0a000a;
+        public static final int logoP=0x7f0a0009;
+        public static final int main=0x7f0a000c;
+        public static final int menu_About=0x7f0a000f;
+        public static final int menu_Credits=0x7f0a000d;
+        public static final int menu_Donate=0x7f0a000e;
+        public static final int menu_settings=0x7f0a003c;
+        public static final int myLayout=0x7f0a001d;
+        public static final int sBar=0x7f0a0011;
+        public static final int svSB=0x7f0a0010;
+        public static final int tvInstallTheme=0x7f0a0008;
+        public static final int wvDonate=0x7f0a0006;
     }
     public static final class layout {
         public static final int battery=0x7f030000;
         public static final int boot_frag=0x7f030001;
         public static final int donate=0x7f030002;
-        public static final int install=0x7f030003;
-        public static final int list_boot=0x7f030004;
-        public static final int list_frag=0x7f030005;
-        public static final int list_list=0x7f030006;
-        public static final int main=0x7f030007;
-        public static final int menu=0x7f030008;
-        public static final int statusbar=0x7f030009;
-        public static final int theme_frag=0x7f03000a;
-        public static final int themes=0x7f03000b;
+        public static final int extras=0x7f030003;
+        public static final int install=0x7f030004;
+        public static final int list_boot=0x7f030005;
+        public static final int list_frag=0x7f030006;
+        public static final int list_list=0x7f030007;
+        public static final int main=0x7f030008;
+        public static final int menu=0x7f030009;
+        public static final int statusbar=0x7f03000a;
+        public static final int theme_frag=0x7f03000b;
+        public static final int themes=0x7f03000c;
     }
     public static final class menu {
-        public static final int main=0x7f060000;
+        public static final int main=0x7f090000;
     }
     public static final class string {
-        public static final int aboutApp=0x7f040003;
-        public static final int aboutAppButton=0x7f040004;
-        public static final int app_name=0x7f040000;
-        public static final int hello_world=0x7f040001;
-        public static final int menu_settings=0x7f040002;
+        public static final int aboutApp=0x7f060003;
+        public static final int aboutAppButton=0x7f060004;
+        public static final int app_name=0x7f060000;
+        public static final int hello_world=0x7f060001;
+        public static final int menu_settings=0x7f060002;
+        public static final int yes=0x7f060005;
     }
     public static final class style {
         /** 
@@ -189,9 +205,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f050000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
          */
-        public static final int AppTheme=0x7f050001;
+        public static final int AppTheme=0x7f080001;
+        public static final int Theme_Transparent=0x7f080002;
     }
 }

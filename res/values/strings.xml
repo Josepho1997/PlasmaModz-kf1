@@ -6,5 +6,7 @@
     <string name="menu_settings">Settings</string>
     <string name="aboutApp">So this is my app. I will add more detail about it later</string>
     <string name="aboutAppButton">Cool Story</string>
+  <string-array name="list">Thingymagic, blank</string-array>
+  <string name="yes">Yes</string>
 
 </resources>
