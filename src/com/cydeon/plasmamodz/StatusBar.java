@@ -86,6 +86,7 @@ public class StatusBar extends Activity implements OnClickListener, OnGestureLis
 			z.putExtra("StatWhiteBlue", "statwhiteblue");
 		}
 		startActivity(z);
+		overridePendingTransition (0 , R.anim.slide_up);
 	}
 
 	@Override

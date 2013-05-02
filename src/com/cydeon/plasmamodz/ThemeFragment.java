@@ -20,16 +20,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ThemeFragment extends Fragment {
 
-
+	String model = android.os.Build.MODEL;
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 	    View view = inflater.inflate(R.layout.theme_frag,
-	            container, false);
+	            container, false);	    
+	    
 	    Button button = (Button) view.findViewById(R.id.button1);
 	    button.setOnClickListener(new View.OnClickListener() {
 			

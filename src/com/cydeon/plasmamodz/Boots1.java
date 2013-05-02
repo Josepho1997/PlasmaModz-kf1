@@ -51,6 +51,7 @@ public class Boots1 extends ListActivity {
 			 }else if (position == 7){
 				 a.putExtra("Xbox1", "xbox1");
 				 startActivity(a);
+				 overridePendingTransition (0 , R.anim.slide_up);
 			 }
 	 
 		}

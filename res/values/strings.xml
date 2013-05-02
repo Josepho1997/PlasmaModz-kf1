@@ -4,9 +4,15 @@
     <string name="app_name">Plasma Modz</string>
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
-    <string name="aboutApp">So this is my app. I will add more detail about it later</string>
+    <string name="aboutApp">This is PlasmaModz. PlasmaModz is an app built specifically for the kindle fire. This apps main purpose is a theme app for the kindle fire, but throughout updates it will have more to it. Let me guide you through how to use this app. The theme section is where you make your own theme by downloading your choice of mods, and then when you finish picking the app will install it for you all at once. The bootanimation section is where you can install bootanimations. The shortcut section is to quickly get to a specific mod type, and the extras is an extras tab for some extra stuff. More information will be provided in the corresponding section. Thank you for choosing plasma modz, and have a nice day. ;)</string>
     <string name="aboutAppButton">Cool Story</string>
-  <string-array name="list">Thingymagic, blank</string-array>
-  <string name="yes">Yes</string>
+
+    <string-array name="list">Thingymagic, blank</string-array>
+
+    <string name="yes">Yes</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+    <string name="overflow">Menu Overflow</string>
+    <string name="color_stripe">Color Stripe</string>
 
 </resources>

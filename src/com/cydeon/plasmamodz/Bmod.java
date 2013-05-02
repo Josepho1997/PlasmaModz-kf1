@@ -1,27 +1,11 @@
 package com.cydeon.plasmamodz;
 
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.concurrent.TimeoutException;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipInputStream;
 
-import com.stericson.RootTools.RootTools;
-import com.stericson.RootTools.exceptions.RootDeniedException;
-import com.stericson.RootTools.execution.CommandCapture;
-
-import com.koushikdutta.urlimageviewhelper.*;
-
+import android.app.ActionBar;
 import android.app.Activity;
-import android.app.ActivityManager;
 import android.app.DownloadManager;
 import android.app.DownloadManager.Query;
 import android.app.DownloadManager.Request;
@@ -30,18 +14,19 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
+import com.stericson.RootTools.RootTools;
+import com.stericson.RootTools.exceptions.RootDeniedException;
+import com.stericson.RootTools.execution.CommandCapture;
 
 public class Bmod extends Activity {
 
@@ -57,6 +42,8 @@ public class Bmod extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.battery);
+		ActionBar a = getActionBar();
+		a.hide();
 		Button bInstallB = (Button) findViewById(R.id.bInstallBattery);
 		Button bReturnB = (Button) findViewById(R.id.bReturnBattery);
 		ImageView batteryView = (ImageView) findViewById(R.id.ivBattery);
@@ -114,8 +101,7 @@ public class Bmod extends Activity {
 		final String lightredwifi = battery.getString("LightRedWifi");
 		final String statstock = battery.getString("StatStock");
 		final String statgreenhex = battery.getString("StatGreenHex");
-		final String statlightdarkpurple = battery
-				.getString("StatLightDarkPurple");
+		final String statlightdarkpurple = battery.getString("StatLightDarkPurple");
 		final String statnightsky = battery.getString("StatNightSky");
 		final String statpurpleblue = battery.getString("StatPurpleBlue");
 		final String statrainbow = battery.getString("StatRainbow");
@@ -123,7 +109,7 @@ public class Bmod extends Activity {
 		final String statwhiteblack = battery.getString("StatWhiteBlack");
 		final String statwood = battery.getString("StatWood");
 		final String statwhiteblue = battery.getString("StatWhiteBlue");
-
+		
 		if (andy != null) {
 			UrlImageViewHelper.setUrlDrawable(batteryView, "http://random.png",
 					R.drawable.default_img, 60000);
@@ -528,10 +514,12 @@ public class Bmod extends Activity {
 
 			@Override
 			public void onClick(View arg0) {
+				
 				if (andy != null) {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Android Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/gfukrwqy4xqrnj9/Android.zip"));
@@ -543,6 +531,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Blue Box Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/3eh0l472rvpd8yi/BlueBox.zip"));
@@ -554,6 +543,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Circle Percent Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/pd6ojb92nzgo227/CirclePercent.zip"));
@@ -565,6 +555,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Circles Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/i9nqlqr681mezfa/Circles.zip"));
@@ -576,6 +567,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Digital Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/tkyp6g7f2f1budd/Digital.zip"));
@@ -587,6 +579,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Dotted Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/fz2rzp3wqiosfpg/Dotted.zip"));
@@ -598,6 +591,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Full Circle Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/l7ebn47y02f4f8n/FullCircle1.zip"));
@@ -609,6 +603,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Full Circle 2 Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/9fo8vowu74ve89y/FullCircle2.zip"));
@@ -620,6 +615,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Gauge Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/8zlcdz2ymwe4kma/Gauge.zip"));
@@ -631,6 +627,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Softkeys";
 					fileName = "batterymod.zip";
 					fileRealName = "Honeycomb Batttery Mod";
+					deleteBattery();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/qmclypdhziqop19/Honeycomb.zip"));
@@ -642,6 +639,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Stock softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/s74kge4oohbbn7b/softkey_stock.zip"));
@@ -653,6 +651,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Stock Blue softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/ao5bsk2ypi9106j/softkey_stock_blue.zip"));
@@ -664,6 +663,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Green softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/sm9cf1b0oih87yh/softkey_green.zip"));
@@ -675,6 +675,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Pink softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/lh314twk6yjr5yh/softkey_pink.zip"));
@@ -686,6 +687,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Purple softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/p9qkvggr0a6df51/softkey_purple.zip"));
@@ -697,6 +699,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Yellow softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/hj9is7ohuagbb42/softkey_yellow.zip"));
@@ -708,6 +711,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Red softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/qzd95tgnr63vvlp/softkey_red.zip"));
@@ -719,6 +723,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Galaxy softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/5k3tn5057ckpub7/softkey_galaxy.zip"));
@@ -730,6 +735,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Galaxy Blue softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/0euvlxw3t54bxvd/softkey_galaxy_blue.zip"));
@@ -741,6 +747,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Reflect Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/ck429r6w7hwa70d/softkey_reflect.zip"));
@@ -752,6 +759,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Reflect Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/mjinoz4curlz1rd/softkey_reflect_blue.zip"));
@@ -763,6 +771,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Razor Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/zkq1lr1cpvux02h/softkey_razor.zip"));
@@ -774,6 +783,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Razor Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/c1pnqgyq2fg4asi/softkey_razor_blue.zip"));
@@ -785,6 +795,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Small Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/w8fnyvd9lkkuos2/softkey_small.zip"));
@@ -796,6 +807,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Small Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/jcj2r6ifjaqo8rz/softkey_small_blue.zip"));
@@ -807,6 +819,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Small Reflect Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/a5afxfv6mkvav8z/softkey_small_reflect.zip"));
@@ -818,6 +831,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Small Reflect Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/iok8uktd2ckdg65/softkey_small_reflect_blue.zip"));
@@ -829,6 +843,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Xperia Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/3sbkvirpcbksljg/softkey_xperia.zip"));
@@ -840,6 +855,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Xperia Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/3nvzbqlxelelk7g/softkey_xperia_blue.zip"));
@@ -851,6 +867,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "ZTE Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/1r8zl2zqjiykvov/softkey_zte.zip"));
@@ -862,6 +879,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "ZTE Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/hkiynqfsoupi5wl/softkey_zte_blue.zip"));
@@ -873,6 +891,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "College softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/enqy2d9n19oxkzl/softkey_college.zip"));
@@ -884,6 +903,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "College Blue softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/sea6xl48h8hs3mh/softkey_college_blue.zip"));
@@ -895,6 +915,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Defused softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/9hpqt42l7d1t5yh/softkey_defused.zip"));
@@ -906,6 +927,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Defused Blue softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/r4nos7lq38ege7q/softkey_defused_blue.zip"));
@@ -916,8 +938,8 @@ public class Bmod extends Activity {
 				if (droid != null) {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
-					fileName = "softkey.zip";
 					fileRealName = "Droid Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/nvs1yyl87m0mj67/softkey_droid.zip"));
@@ -929,6 +951,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Droid Blue Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/a7h5p0j9yvrd9qo/softkey_droid_blue.zip"));
@@ -940,6 +963,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Pixel softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/u8mdhhrjfpr4oh4/softkey_pixel.zip"));
@@ -951,6 +975,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Pixel Blue softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/zgvzgw5u8elmeaz/softkey_pixel_blue.zip"));
@@ -962,6 +987,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Wifi";
 					fileName = "softkey.zip";
 					fileRealName = "Facebook Softkey Mod";
+					deleteSoftkey();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/tqu9s1hajolybcm/softkey_facebook.zip"));
@@ -973,6 +999,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Dark Blue Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/faar9qvd3br8e71/wifi_blue_dark.zip"));
@@ -984,6 +1011,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Blue Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/f98v3323nzez91v/wifi_cyan.zip"));
@@ -995,6 +1023,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Gold Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/nx7j2ak6noi6v8v/wifi_gold.zip"));
@@ -1006,6 +1035,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Green Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/dsupqkqtgtvunqg/wifi_green.zip"));
@@ -1017,6 +1047,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Orange Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/h71zqsxdlnr0p8l/wifi_orange.zip"));
@@ -1028,6 +1059,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Pink Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/yjdlbco6zkbdz46/wifi_pink.zip"));
@@ -1039,6 +1071,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Red Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/lk7v6umk2pk2bi3/wifi_red.zip"));
@@ -1050,6 +1083,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "White Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/zvp3pprwlh6h39z/wifi_white.zip"));
@@ -1061,6 +1095,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Honeycomb Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/d2ebcxyvnsabcmg/wifi_honeycomb.zip"));
@@ -1072,6 +1107,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.StatusBar";
 					fileName = "wifi.zip";
 					fileRealName = "Light Red Wifi Mod";
+					deleteWifi();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/79jvb8qjx7shwr0/wifi_lightred.zip"));
@@ -1083,6 +1119,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Stock Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1095,6 +1132,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Green Hex Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1107,6 +1145,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Purple Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1119,6 +1158,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Night Sky Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1131,6 +1171,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Purple Blue Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1143,6 +1184,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Rainbow Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1155,6 +1197,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Red Blue Orange Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1167,6 +1210,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "White Black Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1179,6 +1223,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "Wood Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1191,6 +1236,7 @@ public class Bmod extends Activity {
 					className = "com.cydeon.plasmamodz.Lock";
 					fileName = "stat.zip";
 					fileRealName = "White Blue Status Bar Mod";
+					deleteStat();
 					dp = "notnull";
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
@@ -1203,6 +1249,7 @@ public class Bmod extends Activity {
 				if (dp != null) {
 					fileName = "dp.zip";
 					fileRealName = "Dependencies";
+					deleteDp();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
 							Uri.parse("https://dl.dropbox.com/s/lw6b8mftp6pohtd/dp.zip"));
@@ -1210,6 +1257,13 @@ public class Bmod extends Activity {
 							Environment.DIRECTORY_DOWNLOADS, fileName);
 					enqueue = dm.enqueue(req);
 				}
+				
+				 File directory = new File(Environment.DIRECTORY_DOWNLOADS + fileName);
+				    if(directory.exists()){
+				    directory.delete();
+				    }else{
+				    }
+				    
 
 				try {
 					Context context2 = getApplicationContext();
@@ -1220,6 +1274,7 @@ public class Bmod extends Activity {
 					Intent openNewIntent = new Intent(Bmod.this, Class
 							.forName(className));
 					startActivity(openNewIntent);
+					overridePendingTransition (0 , R.anim.slide_down);
 				} catch (ClassNotFoundException e) {
 					e.printStackTrace();
 				}
@@ -1232,6 +1287,7 @@ public class Bmod extends Activity {
 			@Override
 			public void onClick(View arg0) {
 				finish();
+				overridePendingTransition (0 , R.anim.slide_down);
 
 			}
 		});
@@ -1244,13 +1300,82 @@ public class Bmod extends Activity {
 		int duration = Toast.LENGTH_SHORT;
 		Toast toast = Toast.makeText(context, text, duration);
 		toast.show();
+	}
+	
+	public void deleteBattery(){
+		CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/Download", "rm batterymod.zip");
 		try {
-			Intent openNewIntent = new Intent(Bmod.this,
-					Class.forName(className));
-			startActivity(openNewIntent);
-		} catch (ClassNotFoundException e) {
+			RootTools.getShell(true).add(command).waitForFinish();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+		} catch (RootDeniedException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteSoftkey(){
+		CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/Download", "rm softkey.zip");
+		try {
+			RootTools.getShell(true).add(command).waitForFinish();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+		} catch (RootDeniedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteWifi(){
+		CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/Download", "rm wifi.zip");
+		try {
+			RootTools.getShell(true).add(command).waitForFinish();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+		} catch (RootDeniedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteStat(){
+		CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/Download", "rm stat.zip");
+		try {
+			RootTools.getShell(true).add(command).waitForFinish();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+		} catch (RootDeniedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteDp(){
+		CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/Download", "rm dp.zip");
+		try {
+			RootTools.getShell(true).add(command).waitForFinish();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (TimeoutException e) {
+			e.printStackTrace();
+		} catch (RootDeniedException e) {
+			e.printStackTrace();
+		}
+	}
+
 
 }

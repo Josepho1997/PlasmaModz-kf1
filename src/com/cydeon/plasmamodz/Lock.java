@@ -89,6 +89,7 @@ public class Lock extends Activity implements OnClickListener, OnGestureListener
 			a.putExtra("LockOrange", "lockorange");
 		}
 		startActivity(a);
+		overridePendingTransition (0 , R.anim.slide_up);
 	}
 
 	@Override
@@ -103,8 +104,12 @@ public class Lock extends Activity implements OnClickListener, OnGestureListener
         if (e1.getX() - e2.getX() > SWIPE_MIN_DISTANCE
                 && Math.abs(velocityX) > SWIPE_THRESHOLD_VELOCITY) {
 
-            //Nothing as of now
+        	Intent next = new Intent(Lock.this, TextCursor.class);
+        	Bundle bndlanimation =
+        	       	   ActivityOptions.makeCustomAnimation(getApplicationContext(), R.anim.leftr,R.anim.rightl).toBundle();
+        	           startActivity(next, bndlanimation);
             Log.i("tag", "Right to left");
+            finish();
             return true; // Right to left
 
         } else if (e2.getX() - e1.getX() > SWIPE_MIN_DISTANCE

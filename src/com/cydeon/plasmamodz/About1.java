@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class About1 extends ListActivity {
 	 
 		static final String[] Activity = 
-	               new String[] { "About PlasmaModz", "About Me"};
+	               new String[] { "About PlasmaModz"};
 	 
 		@Override
 		public void onCreate(Bundle savedInstanceState) {

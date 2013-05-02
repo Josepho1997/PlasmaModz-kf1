@@ -220,6 +220,7 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
 			a.putExtra("Facebook", "facebook");
 			startActivity(a);
 		}
+		overridePendingTransition (0 , R.anim.slide_up);
 
 	
 	}

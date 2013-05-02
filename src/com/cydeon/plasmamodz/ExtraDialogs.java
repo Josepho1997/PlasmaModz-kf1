@@ -30,6 +30,9 @@ public class ExtraDialogs extends Activity{
 
 	String fileName;
 	final Context context = this;
+	String usb = null;
+	String boot = null;
+	String crt = null;
 	
 	private class DownloadFile extends AsyncTask<String, Integer, String>{
 		@Override
@@ -38,10 +41,10 @@ public class ExtraDialogs extends Activity{
 				URL url = new URL(sURL[0]);
 				URLConnection connection = url.openConnection();
 				connection.connect();
-				int fileLength = connection.getContentLength();
+				int fileLength = connection.getContentLength(); 
 				
 				InputStream input = new BufferedInputStream(url.openStream());
-				OutputStream output = new FileOutputStream("/sdcard/plasma/boot/crtanim");
+				OutputStream output = new FileOutputStream("/sdcard/plasma/" + fileName);
 				byte data[] = new byte[1024];
 				long total = 0;
 				int count;
@@ -80,13 +83,10 @@ public class ExtraDialogs extends Activity{
 		protected void onPostExecute(String result) {
 			super.onPostExecute(result);
 			mProgressDialog.dismiss();
-			Context context = getApplicationContext();
-			CharSequence text = "Installing " + fileName;
-			int duration = Toast.LENGTH_SHORT;
-				
-			Toast toast = Toast.makeText(context, text, duration);
-			toast.show();
-			CommandCapture command = new CommandCapture(0, "su");
+					
+			if(usb != null){
+				Toast.makeText(ExtraDialogs.this, "Enabling USB Debugging", Toast.LENGTH_SHORT).show();
+			CommandCapture command = new CommandCapture(0, "su", "setprop persist.sys.usb.config mass_storage");
 			try {
 				RootTools.getShell(true).add(command).waitForFinish();
 			} catch (InterruptedException e) {
@@ -98,7 +98,40 @@ public class ExtraDialogs extends Activity{
 			} catch (RootDeniedException e) {
 				e.printStackTrace();
 			}
-			} //end of if statement
+			} //end of usb if statement
+			
+			if(boot != null){
+				Toast.makeText(ExtraDialogs.this, "Restoring Boot Animation", Toast.LENGTH_SHORT).show();
+			CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/plasma/boot/bkup", "mv bootanimation.zip /sdcard/plasma", "mv /system/media/bootanimation.zip /sdcard/plasma/boot/bkup/", "mv /sdcard/plasma/bootanimation.zip /system/media/", "chmod 644 /system/media/bootanimation.zip");
+			try {
+				RootTools.getShell(true).add(command).waitForFinish();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (TimeoutException e) {
+				e.printStackTrace();
+			} catch (RootDeniedException e) {
+				e.printStackTrace();
+			}
+			} //end of boot if statement
+			
+			if(crt != null){
+				Toast.makeText(ExtraDialogs.this, "Downloading/Installing CRT Electron Beam Animation", Toast.LENGTH_SHORT).show();
+				CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/plasma/", "cp /system/framework/framework-res.apk /sdcard/plasma", "wait 3", "mv /sdcard/Download/resources.arsc /sdcard/plasma/", "wait 2", "zip -r framework-res.apk resources.arsc", "wait 3", "mv framework-res.apk frame.apk", "wait 3", "zipalign -v 4 frame.apk framework-res.apk", "wait 3", "cp framework-res.apk /system/framework", "chmod 644 /system/framework/framework-res.apk", "rm resources.arsc", "rm framework-res.apk", "busybox killall system_server");
+				try {
+					RootTools.getShell(true).add(command).waitForFinish();
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (TimeoutException e) {
+					e.printStackTrace();
+				} catch (RootDeniedException e) {
+					e.printStackTrace();
+				}
+				} //end of crt if statement
+			}
 		}
 	    
 		ProgressDialog mProgressDialog;
@@ -109,6 +142,8 @@ public class ExtraDialogs extends Activity{
 		super.onCreate(savedInstanceState);
 		Bundle battery;
 		battery = getIntent().getExtras();
+		final String usb = battery.getString("USB");
+		final String restore = battery.getString("Restore");
 		final String crt = battery.getString("CRT");
 		mProgressDialog = new ProgressDialog(ExtraDialogs.this);
 		mProgressDialog.setIndeterminate(false);
@@ -116,21 +151,78 @@ public class ExtraDialogs extends Activity{
 		mProgressDialog.setMessage("Downloading " + fileName);
 		mProgressDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
 		mProgressDialog.setCancelable(false);
-		if(crt != null){
+		if(usb != null){
+			startUSB();
+		}else if (restore != null){
+			startRestore();
+		}else if (crt != null){
 			startCRT();
 		}
 	}
 	
-	public void startCRT(){
+	public void startUSB(){
 		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
-		alertDialogBuilder.setTitle("Install CRT Beam Off Animation?");
+		alertDialogBuilder.setTitle("Enable USB Debugging?");
 		 
 		alertDialogBuilder
-			.setMessage("Are you sure that you want to install CRT Beam Off Animation?")
+			.setMessage("Are you sure that you want to enable USB Debugging?")
 			.setCancelable(false)
 			.setPositiveButton(R.string.yes,new DialogInterface.OnClickListener() {
 				public void onClick(DialogInterface dialog,int id) {
+					usb = "notnull";
+					DownloadFile downloadFile = new DownloadFile();
+					downloadFile.execute();
+				}
+			  })
+			.setNegativeButton("No",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
 					ExtraDialogs.this.finish();
+				}
+			});
+
+			AlertDialog alertDialog = alertDialogBuilder.create();
+
+			alertDialog.show();
+	}
+	
+	public void startRestore(){
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+		alertDialogBuilder.setTitle("Restore Boot Animation?");
+		 
+		alertDialogBuilder
+			.setMessage("Are you sure that you want to restore your previous boot animation?")
+			.setCancelable(false)
+			.setPositiveButton(R.string.yes,new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					boot = "notnull";
+					DownloadFile downloadFile = new DownloadFile();
+					downloadFile.execute();
+				}
+			  })
+			.setNegativeButton("No",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					ExtraDialogs.this.finish();
+				}
+			});
+
+			AlertDialog alertDialog = alertDialogBuilder.create();
+
+			alertDialog.show();
+	}
+	
+	public void startCRT(){
+		fileName = "resources.arsc";
+		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+		alertDialogBuilder.setTitle("Enable CRT Electron Beam Animation");
+		 
+		alertDialogBuilder
+			.setMessage("Are you sure that you want to enable CRT Electron Beam Animation?")
+			.setCancelable(false)
+			.setPositiveButton(R.string.yes,new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					DownloadFile downloadFile = new DownloadFile();
+					downloadFile.execute("https://dl.dropbox.com/s/bgmgxwl06duga57/resources.arsc");
+					crt = "notnull";
 				}
 			  })
 			.setNegativeButton("No",new DialogInterface.OnClickListener() {

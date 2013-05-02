@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
+        android:background="@drawable/custom"
         android:text="Install" />
 
     <Button
@@ -18,11 +19,15 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/custom"
         android:text="Return" />
 
     <ImageView
         android:id="@+id/ivBattery"
         android:layout_width="match_parent"
-        android:layout_height="800dp" />
+        android:layout_height="800dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp" />
 
 </RelativeLayout>

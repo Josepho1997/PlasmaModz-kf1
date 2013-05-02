@@ -35,10 +35,40 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
+	String device = android.os.Build.MODEL;
+	
 	@Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
+    ConnectivityManager cn=(ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+    NetworkInfo nf=cn.getActiveNetworkInfo();
+    if(nf != null && nf.isConnected()==true ) {
+        Toast.makeText(this, "Network Available", Toast.LENGTH_LONG).show();
+    }
+    else {
+    	AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		alertDialogBuilder.setTitle("You need Internet Connection!");
+		 
+		alertDialogBuilder
+			.setMessage("Almost this entire app depends on the internet! If you are not connected, please connect and try again. If you still wish to continue, do note that many feature will NOT work!")
+			.setCancelable(false)
+			.setNegativeButton("Continue",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					
+				}
+			  })
+			.setPositiveButton("Exit",new DialogInterface.OnClickListener() {
+				public void onClick(DialogInterface dialog,int id) {
+					finish();
+				}
+			});
+
+			AlertDialog alertDialog = alertDialogBuilder.create();
+
+			alertDialog.show();
+      }
+    
 		
     
 	//Checking For BusyBox
@@ -53,11 +83,11 @@ public class MainActivity extends Activity {
 	try {
 		RootTools.getShell(true).add(command).waitForFinish();
 		File zip = new File("/system/bin/zip");
-	    if(zip.exists() && zip.isDirectory()){
+	    if(zip.exists()){
 	    //Do nothing. Directory is existent	
 	    }else{
 	    //Directory does not exist. Make directory (First time app users)
-	    	Toast.makeText(MainActivity.this, "Moving necessary files", Toast.LENGTH_SHORT).show();
+	    	Toast.makeText(MainActivity.this, "Moving and Installing Binaries...", Toast.LENGTH_SHORT).show();
 	    	CommandCapture command1 = new CommandCapture(0, "su", "cd /sdcard", "busybox mount -o remount, rw /system", "cp zip /system", "chmod 777 /system/zip", "mv /system/zip /system/bin", "cp zipalign /system", "chmod 777 /system/zipalign", "mv /system/zipalign /system/bin");
 	    	try {
 	    		RootTools.getShell(true).add(command1).waitForFinish();
@@ -74,8 +104,8 @@ public class MainActivity extends Activity {
 	    		e.printStackTrace();
 	        Toast.makeText(MainActivity.this, "Error! SU not granted!", Toast.LENGTH_SHORT).show();
 	    	}
-	    	Toast.makeText(MainActivity.this, "Binaries Moved and Installed!", Toast.LENGTH_SHORT).show();
-	    }
+	    	Toast.makeText(MainActivity.this, "Binaries Installed!", Toast.LENGTH_SHORT).show();
+	    	}
 	} catch (InterruptedException e) {
 		e.printStackTrace();
 	} catch (IOException e) {
@@ -86,7 +116,6 @@ public class MainActivity extends Activity {
 		e.printStackTrace();
 	}
 	
-	
     
     //Defining File Directory
     File directory = new File(Environment.getExternalStorageDirectory() + "/plasma");
@@ -96,6 +125,32 @@ public class MainActivity extends Activity {
     //Directory does not exist. Make directory (First time app users)
     directory.mkdirs();
     }
+    
+    File shown = new File(Environment.getExternalStorageDirectory() + "/plasma/showed.weclome");
+    if(shown.exists()){
+    }else{
+    		AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+    		alertDialogBuilder.setTitle("Welcome to PlasmaModz!");
+    		 
+    		alertDialogBuilder
+    			.setMessage(R.string.aboutApp)
+    			.setCancelable(false)
+    			.setPositiveButton(R.string.aboutAppButton,new DialogInterface.OnClickListener() {
+    				public void onClick(DialogInterface dialog,int id) {
+    					
+    				}
+    			  });
+
+    			AlertDialog alertDialog = alertDialogBuilder.create();
+
+    			alertDialog.show();
+    try {
+		shown.createNewFile();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+    }
+    
     
     File boot = new File(Environment.getExternalStorageDirectory() + "/plasma/boot");
     if(boot.exists() && boot.isDirectory()){
@@ -216,11 +271,13 @@ public class MainActivity extends Activity {
           return true;
 
       case R.id.menu_Credits:
-          Toast.makeText(MainActivity.this, "Credits is Selected", Toast.LENGTH_SHORT).show();
+    	  Toast.makeText(MainActivity.this, "Credits", Toast.LENGTH_SHORT).show();
+          Intent credits = new Intent(MainActivity.this, Credits1.class);
+          startActivity(credits);
           return true;
 
       case R.id.menu_Donate:
-          Toast.makeText(MainActivity.this, "Donate is Selected", Toast.LENGTH_SHORT).show();
+          Toast.makeText(MainActivity.this, "Donate", Toast.LENGTH_SHORT).show();
           Intent donate = new Intent(MainActivity.this, Donate.class);
           startActivity(donate);
           return true;

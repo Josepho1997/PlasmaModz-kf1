@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#c0000000"
+    android:orientation="vertical" >
+
+     <Button
+        android:id="@+id/bMod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="22dp"
+        android:text="     Close     " />
+    
+    <ImageView
+        android:id="@+id/ivCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="90dp"
+        android:background="#00ffffff"
+        android:src="@drawable/circle" />
+
+    <TextView
+        android:id="@+id/tvMod"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ivCircle"
+        android:layout_marginTop="139dp"
+        android:textColor="#0099cc"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="Click on a mod to preview the mod and install it" />
+
+</RelativeLayout>
+    

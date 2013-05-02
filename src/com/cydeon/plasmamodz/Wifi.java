@@ -114,6 +114,7 @@ public class Wifi extends Activity implements OnClickListener,
 			a.putExtra("LightRedWifi", "lightredwifi");
 			startActivity(a);
 		}
+		overridePendingTransition (0 , R.anim.slide_up);
 
 	}
 

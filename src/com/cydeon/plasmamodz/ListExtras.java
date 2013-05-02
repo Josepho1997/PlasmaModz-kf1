@@ -41,7 +41,7 @@ public class ListExtras extends ListFragment {
 	
 
 	
-	String[] random = {"Enable CRT Animation", "Restore Boot Animation", "Dance"};
+	String[] random = {"Enable USB Debugging", "Restore Boot Animation", "CRT Electron Beam Animation"};
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState){
@@ -63,20 +63,19 @@ public class ListExtras extends ListFragment {
 	
 	@Override
 	public void onListItemClick(ListView l, View v, int position, long id){
-	
+		Intent usb = new Intent(getActivity(), ExtraDialogs.class);
 		
 	switch(position){
 	case 0:
-		Intent crt = new Intent(getActivity(), ExtraDialogs.class);
-		crt.putExtra("CRT", "crt");
-		startActivity(crt);
+		usb.putExtra("USB", "usb");
 		break;
 	case 1:
-		Toast.makeText(getActivity(), "2", Toast.LENGTH_SHORT).show();
+		usb.putExtra("Restore", "restore");
 		break;
 	case 2:
-		Toast.makeText(getActivity(), "3", Toast.LENGTH_SHORT).show();
+		usb.putExtra("CRT", "crt");
 		break;
 	}
+	startActivity(usb);
 	}
 }

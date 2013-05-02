@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#c0000000" >
+
+    <Button
+        android:id="@+id/bIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginRight="22dp"
+        android:text="     Next     " />
+
+    <TextView
+        android:id="@+id/tvIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:text="Swipe right to view the previous page of mods"
+        android:textColor="#0099cc"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/ivIntro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/tvIntro"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/finger_swipe_right"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tvIntro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ivIntro2"
+        android:layout_marginTop="32dp"
+        android:gravity="center"
+        android:text="Swipe left to view the previous next of mods"
+        android:textColor="#0099cc"
+        android:textSize="30sp" />
+
+    <ImageView
+        android:id="@+id/ivIntro2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/ivIntro"
+        android:layout_below="@+id/tvIntro"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/finger_swipe_left"
+        android:gravity="center" />
+
+</RelativeLayout>

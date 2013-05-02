@@ -11,6 +11,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
+        android:background="@drawable/custom"
         android:text="Install Theme" />
 
     <TextView

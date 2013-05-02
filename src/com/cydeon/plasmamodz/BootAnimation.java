@@ -29,14 +29,6 @@ public class BootAnimation extends Activity{
 	
 	String fileName;
 	
-	private void copyFile(InputStream in, OutputStream out) throws IOException {
-		byte[] buffer = new byte[1024];
-		int read;
-		while((read = in.read(buffer)) != -1){
-			out.write(buffer, 0, read);
-		}
-	}
-	
 	private class DownloadFile extends AsyncTask<String, Integer, String>{
 		@Override
 		protected String doInBackground(String... sURL) {
@@ -96,7 +88,7 @@ public class BootAnimation extends Activity{
 				
 			Toast toast = Toast.makeText(context, text, duration);
 			toast.show();
-			CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "cd /sdcard/plasma/boot", "rm /system/media/bootanimation.zip", "cp /sdcard/plasma/boot/bootanimation.zip /system/media", "chmod 644 /system/media/bootanimation.zip");
+			CommandCapture command = new CommandCapture(0, "su", "#!/system/bin/sh", "busybox mount -o remount, rw /system", "mkdir /sdcard/plasma/boot/bkup", "rm /sdcard/plasma/boot/bkup/bootanimation.zip", "mv /sdcard/plasma/boot/bootanimation.zip /sdcard/plasma", "cp /system/media/bootanimation.zip /sdcard/", "rm /system/media/bootanimation.zip", "cp /sdcard/plasma/bootanimation.zip /system/media/", "mv /sdcard/bootanimation.zip /sdcard/plasma/boot/bkup/", "rm /sdcard/plasma/bootanimation.zip", "chmod 644 /system/media/bootanimation.zip");
 			try {
 				RootTools.getShell(true).add(command).waitForFinish();
 			} catch (InterruptedException e) {
@@ -108,6 +100,7 @@ public class BootAnimation extends Activity{
 			} catch (RootDeniedException e) {
 				e.printStackTrace();
 			}
+			Toast.makeText(BootAnimation.this, "Finished Installing " + fileName, Toast.LENGTH_SHORT).show();
 		}
 	}
 	    
@@ -178,25 +171,25 @@ public class BootAnimation extends Activity{
 					downloadFile.execute("https://dl.dropbox.com/s/mqan6ly3g8t4r5j/bootanimation.zip");
 				}if (dragon != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://205.196.122.234/snexuws5kfeg/vjzk5v33fu1u6ca/DBbootanimation.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/qglugttuxbmc2r5/DBbootanimation.zip");
 				}if (gameboy != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://205.196.120.109/j9ye9cznxazg/oqu704icx2kxx30/Gbootanimation.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/u8ej23xbgb033n1/Gbootanimation.zip");
 				}if (gamecube != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://199.91.154.113/hzdvf89m0vag/r86xilqqq8mursc/GCbootanimation.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/mnihfh6mxwfstn0/GCbootanimation.zip");
 				}if (nexus != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://forum.xda-developers.com/attachment.php?attachmentid=1162570&d=1340907701");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/16unuhb9xfjw69e/Jellybean%284.1%29.zip");
 				}if (nightmare != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://199.91.154.15/75mtt4zeb4yg/co5d822mralvmn4/The+Nightmare+Before+Christmas.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/51j2c4cyuanqqfk/The%20Nightmare%20Before%20Christmas.zip");
 				}if (xbox != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://205.196.121.24/n4ccp4ps8zzg/j2on8mnc7rqo2q2/NXbootanimation.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/mowmrhgrvb0qb48/NXbootanimation.zip");
 				}if (xbox1 != null){
 					DownloadFile downloadFile = new DownloadFile();
-					downloadFile.execute("http://205.196.120.108/31oc4yj1njxg/un8leuns2md21fq/OXbootanimation.zip");
+					downloadFile.execute("https://dl.dropboxusercontent.com/s/zu1w7ud5o3trz1r/OXbootanimation.zip");
 				}
 				
 			}
@@ -207,6 +200,7 @@ public class BootAnimation extends Activity{
 			@Override
 			public void onClick(View v) {
 				finish();
+				overridePendingTransition (0 , R.anim.slide_down);
 			}
 		});
 

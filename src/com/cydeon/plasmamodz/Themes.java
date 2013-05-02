@@ -1,6 +1,7 @@
 package com.cydeon.plasmamodz;
 
 import java.io.File;
+import java.io.IOException;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -31,6 +32,19 @@ public class Themes extends Activity implements OnClickListener, OnGestureListen
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.themes);
+		
+		File fIntro = new File("/sdcard/plasma/shown_intro");
+		if(fIntro.exists()){
+			
+		}else{
+			Intent i = new Intent(this, Instructions.class);
+			startActivity(i);
+			try {
+				fIntro.createNewFile();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		
 		RelativeLayout r1 = (RelativeLayout) findViewById(R.id.myLayout);
 		gestureDetector = new GestureDetector(this, this);
@@ -132,6 +146,7 @@ public class Themes extends Activity implements OnClickListener, OnGestureListen
 			j.putExtra("Honeycomb", "honeycomb");
 			startActivity(j);
 		}
+		overridePendingTransition (0 , R.anim.slide_up);
 		
 	}
 
