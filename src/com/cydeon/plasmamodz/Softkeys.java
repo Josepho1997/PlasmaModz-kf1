@@ -261,6 +261,7 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
 	public void onLongPress(MotionEvent arg0) {
 		Intent in = new Intent(Softkeys.this, MainActivity.class);
 		startActivity(in);
+		overridePendingTransition (0 , R.anim.slide_down);
 	}
 
 	

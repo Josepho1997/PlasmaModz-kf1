@@ -127,8 +127,9 @@ public class Lock extends Activity implements OnClickListener, OnGestureListener
 
 	@Override
 	public void onLongPress(MotionEvent e) {
-		// TODO Auto-generated method stub
-		
+		Intent hiddenMessageForAnybodyLookingAtMyCodePleaseCommentOnMyThreadIfYouNoticedThis = new Intent(Lock.this, MainActivity.class);
+		startActivity(hiddenMessageForAnybodyLookingAtMyCodePleaseCommentOnMyThreadIfYouNoticedThis);
+		overridePendingTransition (0 , R.anim.slide_down);
 	}
 
 	@Override

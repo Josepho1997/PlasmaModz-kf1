@@ -181,8 +181,9 @@ public class Themes extends Activity implements OnClickListener, OnGestureListen
 	}
 	@Override
 	public void onLongPress(MotionEvent e) {
-		// TODO Auto-generated method stub
-		
+		Intent in = new Intent(Themes.this, MainActivity.class);
+		startActivity(in);
+		overridePendingTransition (0 , R.anim.slide_down);		
 	}
 
 	@Override

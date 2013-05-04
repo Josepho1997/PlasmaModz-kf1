@@ -116,6 +116,22 @@ public class ListShort1 extends Activity{
 		});
 		mCardView.addCard(WifiCard);
 		
+		MyPlayCard InstallCard = new MyPlayCard(
+		        "Installer", 
+		        "Click here to go to the installer", 
+		        "#ff33b5e5", "#ffda3800", true, false);
+		
+		InstallCard.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(ListShort1.this, Install.class);
+				startActivity(intent);
+				overridePendingTransition(0, R.anim.slide_up);
+
+			}
+		});
+		mCardView.addCard(InstallCard);
+		
 		mCardView.refresh();
 		
 		}

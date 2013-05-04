@@ -1252,7 +1252,7 @@ public class Bmod extends Activity {
 					deleteDp();
 					dm = (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
 					Request req = new Request(
-							Uri.parse("https://dl.dropbox.com/s/lw6b8mftp6pohtd/dp.zip"));
+							Uri.parse("https://dl.dropboxusercontent.com/s/lw6b8mftp6pohtd/dp.zip"));
 					req.setDestinationInExternalPublicDir(
 							Environment.DIRECTORY_DOWNLOADS, fileName);
 					enqueue = dm.enqueue(req);
