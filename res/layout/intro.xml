@@ -46,7 +46,7 @@
         android:layout_below="@+id/ivIntro2"
         android:layout_marginTop="32dp"
         android:gravity="center"
-        android:text="Swipe left to view the previous next of mods"
+        android:text="Swipe left to view the next page of mods"
         android:textColor="#0099cc"
         android:textSize="30sp" />
 
