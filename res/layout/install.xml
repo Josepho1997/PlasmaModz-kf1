@@ -22,8 +22,19 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:textSize="50sp"
-        android:textColor="#ffffffff"
+        android:textColor="#ffb3d233"
         android:text="Install your theme!"
         android:gravity="center"  />
+
+    <TextView
+        android:id="@+id/tvM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tvInstallTheme"
+        android:gravity="center"
+        android:textColor="#ffb3d233"
+        android:text="Please wait for all downloads to finish before installing theme"
+        android:textSize="29sp" />
 
 </RelativeLayout>
