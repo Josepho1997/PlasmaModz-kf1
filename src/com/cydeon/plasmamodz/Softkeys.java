@@ -1,35 +1,29 @@
 package com.cydeon.plasmamodz;
 
-import java.io.File;
-
-import com.koushikdutta.urlimageviewhelper.UrlImageViewHelper;
-
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Handler;
-import android.util.Log;
+import android.view.GestureDetector;
+import android.view.GestureDetector.OnGestureListener;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
 import android.view.View.OnTouchListener;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
-import android.view.GestureDetector.OnGestureListener;
-import android.view.GestureDetector;
-import android.os.*;
 
 
-public class Softkeys extends Activity implements OnClickListener, OnGestureListener{
+public class Softkeys extends Activity implements OnClickListener, OnGestureListener, OnLongClickListener{
 
 	 private GestureDetector gestureDetector;
 	 private static final int SWIPE_MIN_DISTANCE = 150;
 	    private static final int SWIPE_THRESHOLD_VELOCITY = 100;
+	    private boolean isRunning = false;
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
@@ -48,6 +42,7 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
 		    };
 
 		    ll.setOnTouchListener(gestureListener);
+		    
 
 			int [] viewIds = new int [] {R.id.b1, R.id.b2, R.id.b3, R.id.b4, R.id.b5, R.id.b6, R.id.b7, R.id.b8, R.id.b9, R.id.b10, R.id.b11, R.id.b12, R.id.b13, R.id.b13, R.id.b14, R.id.b15, R.id.b16, R.id.b17, R.id.b18, R.id.b19, R.id.b20, R.id.b21, R.id.b22, R.id.b23, R.id.b24, R.id.b25, R.id.b26, R.id.b27, R.id.b28, R.id.b29, R.id.b30};
 			for(int i = 0; i < viewIds.length; i++){
@@ -123,7 +118,12 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
 					v.setOnClickListener(this);
 				}
 			}
-				
+			for(int i = 0; i < viewIds.length; i++){
+				View v = findViewById(viewIds[i]);
+				if (v != null) {
+					v.setOnLongClickListener(this);
+				}
+			}
 			}
 
 	@Override
@@ -287,5 +287,15 @@ public class Softkeys extends Activity implements OnClickListener, OnGestureList
 	@Override
 	public boolean onTouchEvent(MotionEvent me) {
 	return gestureDetector.onTouchEvent(me);
+	}
+
+	@Override
+	public boolean onLongClick(View arg0) {
+		if (arg0.getId() == R.id.b17) {
+			Intent pong = new Intent(Softkeys.this, Pong.class);
+			startActivity(pong);
+			overridePendingTransition (0 , R.anim.slide_down);
+		}
+		return false;
 	}
 }
