@@ -20,8 +20,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.cydeon.plasmamodz.MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,116 +30,127 @@
         </activity>
         <activity
             android:name=".Themes"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".BootFragment"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Boots"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Boots1"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Bmod"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Install"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Softkeys"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Wifi"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".BootAnimation"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".StatusBar"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
-         <activity
+        <activity
             android:name=".ListShort1"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".About"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".About1"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Donate"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Download"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Lock"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".ExtraDialogs"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.Transparent" >
         </activity>
         <activity
             android:name=".TextCursor"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Credits"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Credits1"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name=".Instructions"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
-          android:theme="@android:style/Theme.Translucent" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" >
         </activity>
         <activity
             android:name=".Instro"
-            android:screenOrientation="portrait"
             android:label="@string/app_name"
-          android:theme="@android:style/Theme.Translucent" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <activity
+            android:name=".Pong"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Translucent" >
+        </activity>
+        <activity
+            android:name=".BuildPropEditor"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
         </activity>
     </application>
 
