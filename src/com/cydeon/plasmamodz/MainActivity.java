@@ -190,6 +190,12 @@ public class MainActivity extends Activity {
     		.setText("Extras")
     		.setTabListener(new MyTabListener<ListExtras>(this, "bit", ListExtras.class));
     actionBar.addTab(tab4);
+    
+    Tab tab5 = actionBar
+    		.newTab()
+    		.setText("Build.Prop Editor")
+    		.setTabListener(new MyTabListener<ListProp>(this, "bite", ListProp.class));
+    actionBar.addTab(tab5);
 
   }
 
